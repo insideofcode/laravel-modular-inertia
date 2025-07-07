@@ -1,0 +1,30 @@
+{
+    "name": "daniwebdev/authentication",
+    "description": "",
+    "authors": [
+        {
+            "name": "Muhamad Yusup Hamdani",
+            "email": "dani@qerja.co"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Authentication\\": "app/",
+            "Modules\\Authentication\\Database\\Factories\\": "database/factories/",
+            "Modules\\Authentication\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Authentication\\Tests\\": "tests/"
+        }
+    }
+}
