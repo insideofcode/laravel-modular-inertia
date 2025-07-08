@@ -3,7 +3,7 @@
 namespace Modules\Account\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Settings\ProfileUpdateRequest;
+use Modules\Account\Http\Requests\AccountUpdateRequest;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -26,16 +26,19 @@ class AccountController extends Controller
 
     /**
      * Update the user's profile settings.
+     * 
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+    public function update(AccountUpdateRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        /** @var \App\Models\User $user */ $user = $request->user();
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        $user->fill($request->validated());
+
+        if ($user->isDirty('email')) {
+            $user->email_verified_at = null;
         }
 
-        $request->user()->save();
+        $user->save();
 
         return to_route('profile.edit');
     }
