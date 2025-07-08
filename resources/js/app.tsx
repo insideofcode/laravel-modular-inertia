@@ -8,7 +8,7 @@ import { initializeTheme } from './hooks/use-appearance';
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createInertiaApp({
-    title: (title) => title ? `${title} - ${appName}` : appName,
+    title: (title) => (title ? `${title} - ${appName}` : appName),
     // resolve: (name) => resolvePageComponent(`./pages/${name}.tsx`, import.meta.glob('./pages/**/*.tsx')),
     resolve: (name) => {
         let parts = name.split('::');
@@ -18,7 +18,7 @@ createInertiaApp({
         if (parts.length > 1) {
             return resolvePageComponent(
                 `../../modules/${moduleName}/resources/js/pages/${pageName}.tsx`,
-                import.meta.glob('../../modules/**/resources/js/pages/**/*.tsx')
+                import.meta.glob('../../modules/**/resources/js/pages/**/*.tsx'),
             );
         }
 
