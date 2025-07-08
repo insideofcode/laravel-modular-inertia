@@ -1,0 +1,30 @@
+{
+    "name": "daniwebdev/account",
+    "description": "",
+    "authors": [
+        {
+            "name": "Muhamad Yusup Hamdani",
+            "email": "dani@qerja.co"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Account\\": "app/",
+            "Modules\\Account\\Database\\Factories\\": "database/factories/",
+            "Modules\\Account\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Account\\Tests\\": "tests/"
+        }
+    }
+}

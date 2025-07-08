@@ -4,7 +4,6 @@ import { pathToFileURL } from 'url';
 
 async function collectModuleAssetsPaths(paths, modulesPath) {
   modulesPath = path.join(__dirname, modulesPath);
-
   const moduleStatusesPath = path.join(__dirname, 'modules_statuses.json');
 
   try {

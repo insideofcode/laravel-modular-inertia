@@ -25,7 +25,8 @@ return [
     */
     'stubs' => [
         'enabled' => false,
-        'path' => base_path('vendor/nwidart/laravel-modules/src/Commands/stubs'),
+        // 'path' => base_path('vendor/nwidart/laravel-modules/src/Commands/stubs'),
+        'path' => base_path('stubs/nwidart-stubs'),
         'files' => [
             'routes/web' => 'routes/web.php',
             'routes/api' => 'routes/api.php',
@@ -33,10 +34,11 @@ return [
             'views/master' => 'resources/views/components/layouts/master.blade.php',
             'scaffold/config' => 'config/config.php',
             'composer' => 'composer.json',
-            'assets/js/app' => 'resources/assets/js/app.js',
-            'assets/sass/app' => 'resources/assets/sass/app.scss',
+            // 'assets/js/app' => 'resources/assets/js/app.js',
+            // 'assets/sass/app' => 'resources/assets/sass/app.scss',
             'vite' => 'vite.config.js',
             'package' => 'package.json',
+            'js/pages/index' => 'resources/js/pages/index.tsx',
         ],
         'replacements' => [
             /**
@@ -72,6 +74,7 @@ return [
                 'PROVIDER_NAMESPACE',
                 'APP_FOLDER_NAME',
             ],
+            'js/pages/index' => ['LOWER_NAME', 'STUDLY_NAME', 'KEBAB_NAME'],
         ],
         'gitkeep' => true,
     ],
@@ -171,9 +174,11 @@ return [
             'lang' => ['path' => 'lang', 'generate' => false],
 
             // resource/
-            'assets' => ['path' => 'resources/assets', 'generate' => true],
+            'assets' => ['path' => 'resources/assets', 'generate' => false],
             'component-view' => ['path' => 'resources/views/components', 'generate' => false],
-            'views' => ['path' => 'resources/views', 'generate' => true],
+            'views' => ['path' => 'resources/views', 'generate' => false],
+            'js' => ['path' => 'resources/js', 'generate' => true],
+            'pages' => ['path' => 'resources/js/pages', 'generate' => true],
 
             // routes/
             'routes' => ['path' => 'routes', 'generate' => true],
